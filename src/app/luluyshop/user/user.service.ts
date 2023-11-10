@@ -1,16 +1,22 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {Inject, Injectable} from '@angular/core';
+import {ServiceGeneric} from "../../generics/services/http/service-generic.service";
+import {Environment} from "../../generics/classes/environment";
+import {LulushopHttpService} from "../../generics/services/http/lulushop-http.service";
 import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  url = "http://localhost:8080/api/users/signup"
-
-  constructor(private http: HttpClient) {
+export class UserService extends ServiceGeneric {
+  override updateNotify = "L'utilisateur a bien été mis à jour"
+  override addNotify = "L'utilisateur a été ajouté"
+  constructor(@Inject('env') protected override environment: Environment, http : LulushopHttpService) {
+    super(environment, http, 'users');
   }
   signup(newUser: any) : Observable<any>{
-    return this.http.post(this.url, newUser);
+    const url = `${this.baseUrl}/signup`
+    return this.http.post(url, newUser);
   }
+
+
 }

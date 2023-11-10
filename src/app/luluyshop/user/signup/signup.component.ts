@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {UserService} from "../user.service";
 import {Router} from "@angular/router";
+import {SnotifyService} from "ng-snotify";
+import {SnackbarService} from "../../../generics/services/snack-bar.service";
 
 @Component({
   selector: 'app-signup',
@@ -14,11 +16,14 @@ export class SignupComponent {
     emailAddress: '',
     password: ''
   }
-  constructor(private service : UserService, private router: Router) {
+  constructor(private service : UserService, private router: Router, private sn: SnackbarService) {
   }
   signup(){
     this.service.signup(this.user).subscribe({
-      next: () => this.router.navigate(['user/signin'])
+      next: () => {
+        this.sn.success("Inscription ok");
+        this.router.navigate(['luluyshop/user/signin'])
+      },
     })
   }
 

@@ -10,6 +10,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
 import {UserService} from "./user.service";
+import {MatButtonModule} from "@angular/material/button";
 
 const routes: Route[] = [
   {
@@ -39,6 +40,7 @@ const routes: Route[] = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatButtonModule,
   ],
 })
 export class UserModule { }

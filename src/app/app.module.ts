@@ -6,6 +6,7 @@ import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -17,9 +18,14 @@ import {HttpClientModule} from "@angular/common/http";
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'env',
+      useValue: environment
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
