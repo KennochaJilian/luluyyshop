@@ -4,6 +4,7 @@ import { CategoryComponent } from './category.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
 import {Route, RouterModule} from "@angular/router";
 import {MatButtonModule} from "@angular/material/button";
+import {SharedModule} from "../shared/shared.module";
 
 const routes: Route[] = [
   {
@@ -24,7 +25,8 @@ const routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatButtonModule
+    MatButtonModule,
+    SharedModule,
   ]
 })
 export class CategoryModule { }

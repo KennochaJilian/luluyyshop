@@ -12,6 +12,7 @@ import {Category} from "../classes/category";
 })
 export class CategoryDetailsComponent {
   category: Category;
+  products: Product[];
   constructor(private service: CategoryService, private route: ActivatedRoute) {
   }
 
@@ -21,6 +22,10 @@ export class CategoryDetailsComponent {
         this.service.read(params['id']).subscribe({
           next: (category: Category) => this.category = category
         })
+        this.service.getProducts(params['id']).subscribe({
+          next: (res: Product[]) => this.products = res
+        })
+
       }
     })
   }

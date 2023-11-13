@@ -1,0 +1,12 @@
+<div class="product-container" *ngIf="products && products.length > 0">
+  <div *ngFor="let product of products">
+    <mat-card class="product-card">
+      <img mat-card-image routerLink="details/{{product.id}}"  [src]="product.Images[0].link" alt="{{ product.name }}">
+      <mat-card-content>
+        <h2 routerLink="details/{{product.id}}">{{ product.name }}</h2>
+        <p>{{ product.price | currency:'EUR':'symbol' }}</p>
+        <div class="category-badge" routerLink="/luluyshop/categories/details/{{product.Category.id}}">{{ product.Category.name }}</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

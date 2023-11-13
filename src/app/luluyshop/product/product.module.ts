@@ -12,6 +12,7 @@ import {
   CarouselInnerComponent,
   CarouselItemComponent
 } from "@coreui/angular";
+import {SharedModule} from "../shared/shared.module";
 
 const routes : Route[] = [
   {
@@ -39,6 +40,7 @@ const routes : Route[] = [
     CarouselItemComponent,
     CarouselCaptionComponent,
     CarouselControlComponent,
+    SharedModule,
   ]
 })
 export class ProductModule { }
