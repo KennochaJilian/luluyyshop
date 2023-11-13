@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {UserService} from "../user.service";
+import {SnackbarService} from "../../../generics/services/snack-bar.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signin',
@@ -7,5 +10,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './signin.component.scss'
 })
 export class SigninComponent {
+  user = {
+    emailAddress: '',
+    password: ''
+  }
+  constructor(private service: UserService, private sn: SnackbarService, private router: Router) {
+  }
 
+  signIn(){
+    this.service.signIn(this.user).subscribe({
+      next: (token: string) => {
+        localStorage.setItem('token', token);
+        this.sn.success("Connexion réussie");
+        this.router.navigate(['luluyshop/user/profile'])
+      },
+    })
+  }
 }

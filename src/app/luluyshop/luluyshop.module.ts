@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import {LuluyshopComponent} from "./luluyshop.component";
 import {Route, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 const routes: Route[] = [
   {
@@ -26,6 +29,6 @@ const routes: Route[] = [
     LuluyshopComponent,
     HomeComponent
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)]
+  imports: [CommonModule, RouterModule.forChild(routes), MatToolbarModule, MatIconModule, MatButtonModule]
 })
 export class LuluyshopModule { }

@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {environment} from "../environments/environment";
+import {TokenInterceptor} from "./generics/interceptors/token.interceptor";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {environment} from "../environments/environment";
     {
       provide: 'env',
       useValue: environment
-    }
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

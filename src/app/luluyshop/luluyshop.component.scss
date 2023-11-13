@@ -1,0 +1,23 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.social-icons {
+  margin-right: 16px;
+}
+
+.social-icons a {
+  margin-right: 8px;
+}
+
+.legal-links a {
+  margin-right: 8px;
+  color: white;
+  text-decoration: none;
+}

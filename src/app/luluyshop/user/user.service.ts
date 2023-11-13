@@ -17,6 +17,8 @@ export class UserService extends ServiceGeneric {
     const url = `${this.baseUrl}/signup`
     return this.http.post(url, newUser);
   }
-
-
+  signIn(user: any) : Observable<any>{
+    const url = `${this.baseUrl}/signIn`
+    return this.http.post(url, user);
+  }
 }

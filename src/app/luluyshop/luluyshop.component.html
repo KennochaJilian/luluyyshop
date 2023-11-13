@@ -1,8 +1,26 @@
-<header>
-  <h1>Bienvenue sur {{title}}</h1>
-</header>
+<mat-toolbar color="primary">
+      <span>
+        <mat-icon>store</mat-icon>
+        Lulushop
+      </span>
+  <span class="spacer"></span>
+    <button mat-icon-button [routerLink]="'user/signup'">
+      <mat-icon>person</mat-icon>
+    </button>
+  <button mat-icon-button routerLink="/panier">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>
 <router-outlet></router-outlet>
-<footer>
-  <a [routerLink]="'user/signup'">S'inscrire</a>
-  <a [routerLink]="'user/signin'">Se connecter</a>
-</footer>
+<mat-toolbar color="primary" class="footer">
+  <div class="social-icons">
+    <a href="#" target="_blank" mat-icon-button><mat-icon>facebook</mat-icon></a>
+    <a href="#" target="_blank" mat-icon-button><mat-icon>twitter</mat-icon></a>
+    <a href="#" target="_blank" mat-icon-button><mat-icon>instagram</mat-icon></a>
+  </div>
+  <div class="legal-links">
+    <a href="#" target="_blank">Conditions d'utilisation</a>
+    <a href="#" target="_blank">Conditions de vente</a>
+    <a href="#" target="_blank">RGPD</a>
+  </div>
+</mat-toolbar>
