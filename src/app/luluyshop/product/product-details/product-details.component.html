@@ -1,0 +1,25 @@
+<div class="product-detail-container" *ngIf="product">
+  <div class="carousel-container">
+    <c-carousel>
+      <c-carousel-indicators></c-carousel-indicators>
+      <c-carousel-inner>
+        <c-carousel-item *ngFor="let slide of product.Images">
+          <img
+            class="d-block w-100"
+            loading="lazy"
+            src="{{slide.link}}"
+          />
+        </c-carousel-item>
+      </c-carousel-inner>
+      <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+      <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+    </c-carousel>
+  </div>
+
+  <div class="product-info-container">
+    <h2>{{ product.name }}</h2>
+    <div class="price">{{ product.price | currency:'EUR':'symbol' }}</div>
+    <p>{{ product.description }}</p>
+    <div class="category-badge">{{ product.Category.name }}</div>
+  </div>
+</div>

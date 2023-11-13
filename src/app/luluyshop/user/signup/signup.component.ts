@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {UserService} from "../user.service";
 import {Router} from "@angular/router";
-import {SnotifyService} from "ng-snotify";
 import {SnackbarService} from "../../../generics/services/snack-bar.service";
 
 @Component({

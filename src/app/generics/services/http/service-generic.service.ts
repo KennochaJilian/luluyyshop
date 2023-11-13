@@ -1,4 +1,3 @@
-import {SnotifyService} from "ng-snotify";
 import {LulushopHttpService} from "./lulushop-http.service";
 import {IServiceGeneric} from "../../interfaces/service.generic.interface";
 import {Inject, Injectable} from "@angular/core";
