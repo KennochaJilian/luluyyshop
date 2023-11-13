@@ -1,0 +1,10 @@
+<div class="categories-grid">
+  <div class="category-card" *ngFor="let category of categories;">
+    <div class="category-card-detail">
+      <p class="mat-headline-6 mat-primary">{{ category.name }}</p>
+      <button mat-stroked-button color="primary" routerLink="details/{{ category.id }}">
+        Voir les produits ({{ category.Products?.length }})
+      </button>
+    </div>
+  </div>
+</div>

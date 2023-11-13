@@ -1,0 +1,24 @@
+categories-grid {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(19% - (30px / 2));
+    height: max-content;
+    padding: 2rem;
+    background-color: rgb(250, 250, 250);
+    border-radius: 15px;
+
+    .category-card-detail {
+      p {
+        font-weight: 300;
+      }
+    }
+  }
+}
