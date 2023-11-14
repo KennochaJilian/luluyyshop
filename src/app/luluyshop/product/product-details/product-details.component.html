@@ -15,11 +15,21 @@
       <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
     </c-carousel>
   </div>
-
   <div class="product-info-container">
-    <h2>{{ product.name }}</h2>
-    <div class="price">{{ product.price | currency:'EUR':'symbol' }}</div>
-    <p>{{ product.description }}</p>
-    <div class="category-badge">{{ product.Category.name }}</div>
+    <button *ngIf="userIsAdmin" mat-button color="primary" (click)="onEdit()">{{editMode ? "Arrêter l'edition": 'Editer'}}</button>
+    <ng-container *ngIf="editMode; else displayProduct">
+      <app-product-form [product]="product" [editMode]="true"></app-product-form>
+    </ng-container>
+    <ng-template #displayProduct>
+      <div>
+        <h2>{{ product.name }}</h2>
+        <div class="price">{{ product.price | currency:'EUR':'symbol' }}</div>
+        <p>{{ product.description }}</p>
+        <div class="category-badge">{{ product.Category.name }}</div>
+      </div>
+    </ng-template>
   </div>
 </div>
+
+
+

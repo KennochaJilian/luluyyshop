@@ -3,20 +3,29 @@ import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
 import {MatCardModule} from "@angular/material/card";
 import {RouterLink} from "@angular/router";
+import { ProductFormComponent } from './product-form/product-form.component';
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
 
 
 
 @NgModule({
   declarations: [
-    ProductsListComponent
+    ProductsListComponent,
+    ProductFormComponent
   ],
-    imports: [
-        CommonModule,
-        MatCardModule,
-        RouterLink
-    ],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    RouterLink,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule
+  ],
   exports: [
-    ProductsListComponent
+    ProductsListComponent,
+    ProductFormComponent
   ]
 })
 export class SharedModule { }

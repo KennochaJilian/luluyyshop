@@ -1,0 +1,10 @@
+<mat-form-field appearance="fill">
+  <mat-label>Search</mat-label>
+  <input matInput type="text"
+         placeholder="Type here to search"
+         [(ngModel)]="searchTerm"
+         (ngModelChange)="onChange($event)">
+  <button matSuffix mat-icon-button aria-label="Search">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>

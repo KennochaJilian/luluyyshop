@@ -10,9 +10,14 @@ import {
   CarouselComponent, CarouselControlComponent,
   CarouselIndicatorsComponent,
   CarouselInnerComponent,
-  CarouselItemComponent
+  CarouselItemComponent, ModalBodyComponent, ModalComponent, ModalFooterComponent, ModalHeaderComponent
 } from "@coreui/angular";
 import {SharedModule} from "../shared/shared.module";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 const routes : Route[] = [
   {
@@ -29,6 +34,7 @@ const routes : Route[] = [
   declarations: [
     ProductComponent,
     ProductDetailsComponent,
+    SearchBarComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +47,14 @@ const routes : Route[] = [
     CarouselCaptionComponent,
     CarouselControlComponent,
     SharedModule,
+    MatButtonModule,
+    ModalComponent,
+    ModalHeaderComponent,
+    ModalBodyComponent,
+    ModalFooterComponent,
+    MatIconModule,
+    MatInputModule,
+    FormsModule
   ]
 })
 export class ProductModule { }

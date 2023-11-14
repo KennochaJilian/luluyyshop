@@ -1,3 +1,15 @@
+<app-search-bar (searchChanged)="search($event)"></app-search-bar>
+<button *ngIf="userIsAdmin" mat-button color="primary" (click)="toggleLiveDemo()" cButton>Ajouter un produit</button>
 <div *ngIf="products && products.length > 0">
 <app-products-list [products]="products"></app-products-list>
 </div>
+<c-modal id="liveDemoModal" [visible]="visible" (visibleChange)="handleLiveDemoChange($event)">
+  <c-modal-header>
+    <button (click)="toggleLiveDemo()" mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+      <mat-icon>close</mat-icon>
+    </button>
+  </c-modal-header>
+  <c-modal-body>
+  <app-product-form></app-product-form>
+  </c-modal-body>
+</c-modal>

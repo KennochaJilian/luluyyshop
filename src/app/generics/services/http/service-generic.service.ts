@@ -30,7 +30,7 @@ export class ServiceGeneric implements IServiceGeneric {
   }
 
   update(id: string, data: any): Observable<any> {
-    return this.http.patch(`${this.baseUrl}/${id}`, data);
+    return this.http.put(`${this.baseUrl}/${id}`, data);
   }
 
   delete(id: string): Observable<any> {

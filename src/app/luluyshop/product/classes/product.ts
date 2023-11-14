@@ -9,4 +9,5 @@ export class Product {
   Category: Category;
   Images: Image[];
   id: number;
+  CategoryId:number
 }

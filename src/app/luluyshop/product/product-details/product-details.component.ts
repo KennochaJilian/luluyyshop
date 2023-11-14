@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../services/product.service";
 import {ActivatedRoute} from "@angular/router";
 import {Product} from "../classes/product";
+import {User} from "../../user/classes/user";
 
 @Component({
   selector: 'app-product-details',
@@ -10,6 +11,9 @@ import {Product} from "../classes/product";
 })
 export class ProductDetailsComponent implements OnInit{
   product: Product;
+  editMode = false;
+  userIsAdmin = User.isAdmin();
+
   constructor(private service: ProductService, private route: ActivatedRoute) {
   }
 
@@ -21,6 +25,9 @@ export class ProductDetailsComponent implements OnInit{
         })
       }
     })
+  }
+  onEdit(){
+    this.editMode = !this.editMode
   }
 
 }

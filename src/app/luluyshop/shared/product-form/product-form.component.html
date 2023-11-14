@@ -1,0 +1,28 @@
+<h2>{{editMode ? "Editer": "Ajouter"}} le produit</h2>
+<mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput type="text" name="productName" [(ngModel)]="product.name" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput name="productDescription" [(ngModel)]="product.description"></textarea>
+  </mat-form-field>
+<mat-form-field>
+  <mat-label>Catégorie</mat-label>
+  <mat-select [(ngModel)]="product.CategoryId" name="food">
+    <mat-option *ngFor="let category of this.categories" [value]="category.id">{{ category.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Prix</mat-label>
+    <input matInput type="number" name="productPrice" [(ngModel)]="product.price" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Stock</mat-label>
+    <input matInput type="number" name="productStock" [(ngModel)]="product.stock" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Enregistrer</button>
+
