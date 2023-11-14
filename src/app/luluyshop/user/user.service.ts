@@ -3,6 +3,7 @@ import {ServiceGeneric} from "../../generics/services/http/service-generic.servi
 import {Environment} from "../../generics/classes/environment";
 import {LulushopHttpService} from "../../generics/services/http/lulushop-http.service";
 import {Observable} from "rxjs";
+import {User} from "./classes/user";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import {Observable} from "rxjs";
 export class UserService extends ServiceGeneric {
   override updateNotify = "L'utilisateur a bien été mis à jour"
   override addNotify = "L'utilisateur a été ajouté"
+
+  public currentUser: User;
   constructor(@Inject('env') protected override environment: Environment, http : LulushopHttpService) {
     super(environment, http, 'users');
   }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {UserService} from "../user.service";
 import {SnackbarService} from "../../../generics/services/snack-bar.service";
 import {Router} from "@angular/router";
+import {UserResponse} from "../classes/user-response";
 
 @Component({
   selector: 'app-signin',
@@ -19,8 +20,8 @@ export class SigninComponent {
 
   signIn(){
     this.service.signIn(this.user).subscribe({
-      next: (token: string) => {
-        localStorage.setItem('token', token);
+      next: (userResponse: UserResponse) => {
+        localStorage.setItem('user', JSON.stringify(userResponse));
         this.sn.success("Connexion réussie");
         this.router.navigate(['luluyshop/user/profile'])
       },
