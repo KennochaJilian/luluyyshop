@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-      <span>
+      <span [routerLink]="'/luluyshop'">
         <mat-icon>store</mat-icon>
         Lulushop
       </span>
@@ -10,11 +10,12 @@
   </nav>
   <span class="spacer"></span>
 
-    <button mat-icon-button [routerLink]="'user/signup'">
+    <button mat-icon-button [routerLink]="getLink()">
       <mat-icon>person</mat-icon>
     </button>
-  <button mat-icon-button routerLink="/panier">
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
+    <button [matBadge]="countProduct" matBadgeColor="warn" mat-icon-button [routerLink]="'cart'">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+
 </mat-toolbar>
 <router-outlet></router-outlet>

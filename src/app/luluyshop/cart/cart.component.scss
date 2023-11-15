@@ -1,0 +1,35 @@
+table {
+  border-collapse: collapse;
+  th, td {
+    padding: 1rem 2rem;
+    border: 1px solid lightgrey;
+  }
+
+  th {
+    &:nth-child(1) {
+      text-align: left;
+    }
+
+    font-weight: bold;
+  }
+
+  td {
+    &.text-centered {
+      text-align: center;
+    }
+
+    &.text-right {
+      text-align: right;
+    }
+
+    .pointer:hover {
+      cursor: pointer;
+    }
+  }
+
+  tbody tr {
+    td:nth-child(1) {
+      //max-width: 300px;
+    }
+  }
+}

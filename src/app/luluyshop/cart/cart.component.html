@@ -1,0 +1,41 @@
+<h1>Mon panier</h1>
+<table *ngIf="cart && cart.Products.length > 0">
+  <thead>
+  <tr>
+    <th class="mat-typography">Produit</th>
+    <th class="mat-typography">Catégorie</th>
+    <th class="mat-typography">Quantité</th>
+    <th class="mat-typography">Prix unitaire TTC</th>
+    <th class="mat-typography">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of cart.Products">
+    <td>
+      <div style="display: flex; align-items: center;">
+        <img style="max-width: 60px; margin-right: 1rem;" src="{{ product.Images[0].link }}" alt="{{ product.name }}" />
+        <div>{{ product.name }}</div>
+      </div>
+    </td>
+    <td class="text-centered">{{ product.Category?.name }}</td>
+    <td class="text-centered">{{ 1 }}</td>
+    <td class="text-centered">{{ product.price | currency: 'EUR' }}</td>
+    <td class="text-centered">
+      <mat-icon
+        (click)="handleDeleteItem($event, product.id)"
+        class="pointer"
+        aria-hidden="false"
+        aria-label="delete icon"
+        fontIcon="delete">
+      </mat-icon>
+    </td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td class="text-right" colspan="3">Sous-total :</td>
+    <td class="text-centered">{{ cart.total | currency: 'EUR' }}</td>
+    <td></td>
+  </tr>
+  </tfoot>
+</table>

@@ -7,6 +7,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -15,14 +16,15 @@ import {MatSelectModule} from "@angular/material/select";
     ProductsListComponent,
     ProductFormComponent
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    RouterLink,
-    MatInputModule,
-    FormsModule,
-    MatSelectModule
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        RouterLink,
+        MatInputModule,
+        FormsModule,
+        MatSelectModule,
+        MatButtonModule
+    ],
   exports: [
     ProductsListComponent,
     ProductFormComponent

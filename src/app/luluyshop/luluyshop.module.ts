@@ -6,6 +6,9 @@ import {HomeComponent} from "./home/home.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {SharedModule} from "./shared/shared.module";
+import {CartModule} from "./cart/cart.module";
+import {MatBadgeModule} from "@angular/material/badge";
 
 const routes: Route[] = [
   {
@@ -27,6 +30,10 @@ const routes: Route[] = [
       {
         path: 'categories',
         loadChildren: () => import('./category/category.module').then(m => m.CategoryModule)
+      },
+      {
+        path: 'cart',
+        loadChildren: () => import('./cart/cart.module').then(m => m.CartModule)
       }
     ]
   }
@@ -37,6 +44,14 @@ const routes: Route[] = [
     LuluyshopComponent,
     HomeComponent
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), MatToolbarModule, MatIconModule, MatButtonModule]
+  imports: [
+    CommonModule,
+    CartModule,
+    RouterModule.forChild(routes),
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatBadgeModule
+  ]
 })
 export class LuluyshopModule { }
