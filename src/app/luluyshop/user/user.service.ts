@@ -24,4 +24,28 @@ export class UserService extends ServiceGeneric {
     const url = `${this.baseUrl}/signIn`
     return this.http.post(url, user);
   }
+  getPaymentsModes(userId: string){
+    const url = `${this.baseUrl}/${userId}/payment_methods`;
+    return this.http.get(url);
+  }
+  createPaymentMode(userId: string, data:any){
+    const url = `${this.baseUrl}/${userId}/payment_methods`;
+    return this.http.post(url,data);
+  }
+  updatePaymentMode(userId: string, modeId: string, data: any){
+    const url = `${this.baseUrl}/${userId}/payment_methods/${modeId}`;
+    return this.http.put(url, data)
+  }
+  getAddresses(userId: string){
+    const url = `${this.baseUrl}/${userId}/mailAddress`;
+    return this.http.get(url);
+  }
+  createAddress(userId: string, data:any){
+    const url = `${this.baseUrl}/${userId}/mailAddress`;
+    return this.http.post(url,data);
+  }
+  updateAddress(userId: string, modeId: string, data: any){
+    const url = `${this.baseUrl}/${userId}/mailAddress/${modeId}`;
+    return this.http.put(url, data)
+  }
 }

@@ -1,0 +1,25 @@
+<ng-container *ngIf="currentPaymentMode">
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput type="text" [(ngModel)]="currentPaymentMode.name" name="name" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>N°</mat-label>
+    <input matInput type="text" [(ngModel)]="currentPaymentMode.cardNumber" name="cardNumber" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date d'expiration</mat-label>
+    <input matInput type="date" [(ngModel)]="currentPaymentMode.expirationDate" name="expirationDate" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Code de sécurité</mat-label>
+    <input matInput type="text" [(ngModel)]="currentPaymentMode.securityCode" name="securityCode" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">
+    {{currentPaymentMode.id ? "Modifier le moyen de paiement" : "Ajout du moyen de paiement"}}
+  </button>
+
+</ng-container>

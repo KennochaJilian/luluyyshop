@@ -1,0 +1,18 @@
+<ng-container *ngIf="currentAddress">
+  <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <input matInput type="text" [(ngModel)]="currentAddress.address" name="address" required>
+  </mat-form-field>
+
+  <div>
+    <span>Label:</span>
+    <mat-radio-group [(ngModel)]="currentAddress.label" name="label">
+      <mat-radio-button value="home">Home</mat-radio-button>
+      <mat-radio-button value="work">Work</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">
+    {{ currentAddress.id ? 'Modifier l\'adresse postale' : 'Ajout de l\'adresse postale' }}
+  </button>
+</ng-container>

@@ -1,0 +1,28 @@
+<h2> Adresses connues </h2>
+<div class="row">
+  <button mat-button color="primary" (click)="toggleAdd()" cButton>Ajouter une adresse</button>
+  <div *ngFor="let mailingAddress of mailingAddresses" class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        {{ mailingAddress.label }}
+        <button mat-icon-button aria-label="Edit" class="edit-button" (click)="setAddress(mailingAddress)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+      <div class="card-body">
+        <p>Address: {{ mailingAddress.address }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<c-modal id="liveDemoModal" [visible]="addVisible">
+  <c-modal-header>
+    <button (click)="toggleAdd()" mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+      <mat-icon>close</mat-icon>
+    </button>
+  </c-modal-header>
+  <c-modal-body>
+    <app-mailing-form [currentAddress]="currentAddress" [userId]="userId"></app-mailing-form>
+  </c-modal-body>
+</c-modal>
